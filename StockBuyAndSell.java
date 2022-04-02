@@ -15,14 +15,17 @@ Note that buying on day 2 and selling on day 1 is not allowed because you must b
   
   
   APPROACH:-At the lowest price buy the stock and at the highest price sell the stock.
-    class Solution {
+ class Solution {
     public int maxProfit(int[] prices) {
         int min = prices[0];
         int profit = 0;
+        int maxProfit=0;
+        
         for(int n : prices){
             min = Math.min(min,n);
-            profit = Math.max(profit,n-min);
+            profit =n-min;
+            maxProfit=Math.max(maxProfit,profit);
         }
-        return profit;
+        return maxProfit;
     }
 }
