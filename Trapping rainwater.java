@@ -50,3 +50,25 @@ class Solution {
 }
 
 
+<--------In case this sol take stime ----->
+ 
+ class Solution {
+    public int trap(int[] height) {
+       int lo=0,hi=height.length-1,leftmax=0,rightmax=0,m=0;
+        while(lo<=hi){
+            if(height[lo]<=height[hi]){
+                leftmax=leftmax>height[lo]?leftmax:height[lo];
+                m+=leftmax-height[lo];
+                lo++;
+            }
+            else{
+                rightmax=rightmax>height[hi]?rightmax:height[hi];
+                m+=rightmax-height[hi];
+                hi--;
+            }
+        }
+       return m;
+    }
+}
+
+
