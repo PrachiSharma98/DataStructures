@@ -23,4 +23,4 @@ class Solution {
     }
 }
 
-O(N)
+O(2N)
