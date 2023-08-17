@@ -1,0 +1,26 @@
+class Solution {
+    public int missingNumber(int[] nums) {
+             Map<Integer, Integer> frequencyMap = new HashMap<>();
+
+        for (int num : nums) {
+            frequencyMap.put(num, frequencyMap.getOrDefault(num, 0) + 1);
+        }
+
+        int maxNum = -1;
+        for (int num : nums) {
+            maxNum = Math.max(maxNum, num);
+        }
+
+        int missingNum = -1;
+        for (int i = 0; i <= maxNum + 1; i++) {
+            if (!frequencyMap.containsKey(i)) {
+                missingNum = i;
+                break;
+            }
+        }
+        return missingNum;
+        
+    }
+}
+
+O(N)
