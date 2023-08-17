@@ -24,3 +24,34 @@ class Solution {
 }
 
 O(2N)
+
+
+Hashing  - O(2N) Space - O(N)
+
+public class Solution {
+    public static int[] findMissingRepeatingNumbers(int []a) {
+        int n =a.length;
+        // Write your code here
+        int[] hash = new int[n+1];
+        for(int i=0;i<n;i++)
+        {
+           hash[a[i]]++;
+        }
+        int r=-1;int m=-1;
+        for(int i=0;i<=n;i++)
+        {
+            if(hash[i] == 2){
+                r = i;
+            }
+            if(hash[i] == 0)
+            {
+                m = i;
+            }
+           
+           
+        
+        }
+ int[] ans = {r,m};
+ return ans;
+    }
+}
