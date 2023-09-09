@@ -59,3 +59,20 @@ OR
         return null;
     }
 }
+
+
+The outer while loop runs as long as headB is not null. In the worst case, this loop will run for the entire length of headB, which is O(length of headB).
+
+Inside the outer loop, there is another nested while loop that runs as long as temp is not null. In the worst case, this loop will run for the entire length of headA, which is O(length of headA).
+
+Inside the innermost loop, there is a comparison temp == headB. This comparison takes constant time, O(1).
+
+Combining these, the overall time complexity of the code is O(length of headB * length of headA). This is not efficient, especially if the linked lists are long.
+
+A more efficient approach to finding the intersection of two linked lists is to use a hash set to store the nodes of the first list and then iterate through the second list to check if any node is in the hash set. This approach would have a time complexity of O(length of headA + length of headB) and would be more efficient.
+
+
+
+
+
+
