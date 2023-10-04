@@ -1,0 +1,28 @@
+class Solution {
+    public String reverseWords(String s) {
+      
+        Stack<String> stack = new Stack<>();
+        
+        // Split the input string by one or more spaces
+        String[] words = s.split("\\s+");
+        
+        // Push each word onto the stack
+        for (String w : words) {
+            stack.push(w);
+        }
+        StringBuilder sb = new StringBuilder();
+
+        // Pop and append each word from the stack
+        while (!stack.isEmpty()) {
+            sb.append(stack.pop());
+            sb.append(" "); // Add a space between words
+        }
+
+        // Remove the trailing space and print the reversed string
+        String reversedString = sb.toString().trim();
+        return reversedString;
+        
+    }
+}
+
+O(N)
